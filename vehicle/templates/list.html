@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Car Inventory</h2>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Year of Manufacture</th>
+                    <th>Color</th>
+                    <th>Engine Number</th>
+                    <th>Chassis Number</th>
+                    <th>Registration Number</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for car in object_list%}
+                <tr>
+                    <td>{{ car.id }}</td>
+                    <td>{{ car.make }}</td>
+                    <td>{{ car.car_model }}</td>
+                    <td>{{ car.yom | date:'Y'}}</td>
+                    <td>{{car.color}}</td>
+                    <td>{{ car.engine_no}}</td>
+                    <td>{{car.chassis_number}}</td>
+                    <td>{{car.reg_number}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+
+

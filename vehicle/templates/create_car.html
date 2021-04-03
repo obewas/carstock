@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load widget_tweaks %}
+<div class="form-group">
+    <form method="POST" class="post-form" enctype="multipart/form-data">
+        {% csrf_token%}
+        {{ form.as_p}}
+    <button type="submit" class="btn btn-success" value="submit">Submit</button>
+    </form>
+    
+
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<form action="." method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <P style="color: red;">Total Car Expenses: {{ total }}</P>
+    <input type="submit" value="Calculate" />
+    
+  </form>
+  
+  {% endblock %}
