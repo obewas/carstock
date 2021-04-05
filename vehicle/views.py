@@ -63,8 +63,10 @@ def total_cost(request):
     else:
         form = CostCreationForm()
     return render(request, "total_cost.html", {"form": form})
+
+
    
-class CostListView(ListView):
+class CostListView(LoginRequiredMixin ,ListView):
     template_name = 'cost_list.html'
     model = Cost
     fields = '__all__'
