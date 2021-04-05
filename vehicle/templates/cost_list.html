@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{% block content %}
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Car</th>
+                <th>Customs Charges</th>
+                <th>CIF-Japan</th>
+                <th>Delivery Order</th>
+                <th>Radiation</th>
+                <th>NTSA Sticker</th>
+                <th>Insurance</th>
+                <th>CFS Charges</th>
+                <th>Agency</th>
+                <th>Total Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cost in object_list %}
+            <tr>
+                <td>{{cost.car}}</td>
+                <td>{{cost.customs}}</td>
+                <td>{{cost.cif_cost}}</td>
+                <td>{{cost.delivery_order}}</td>
+                <td>{{cost.radiation}}</td>
+                <td>{{cost.ntsa_sticker}}</td>
+                <td>{{cost.insurance}}</td>
+                <td>{{cost.cfs_chgs}}</td>
+                <td>{{cost.agency}}</td>
+                <td>{{ cost.total }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+
+{% endblock %}
+
+
+
+
+car = models.ForeignKey(Car, on_delete=models.CASCADE)
+customs = models.IntegerField()
+cif_cost = models.IntegerField()
+delivery_order = models.IntegerField()
+radiation = models.IntegerField()
+ntsa_sticker = models.IntegerField()
+insurance = models.IntegerField()
+cfs_chgs = models.IntegerField()
+agency = models.IntegerField()
