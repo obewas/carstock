@@ -126,6 +126,6 @@ STATIC_URL = '/static/'
 
 CREATE_REDIRECT_URL = 'list/'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'list/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
