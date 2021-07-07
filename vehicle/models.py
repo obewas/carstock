@@ -12,7 +12,7 @@ class Car(models.Model):
     color = models.CharField(max_length=100)
     
     def __str__(self):
-        return (self.make + self.car_model)
+        return (self.make + ' ' + self.car_model + ' ' + self.reg_number)
 
     
 
@@ -26,13 +26,14 @@ class Cost(models.Model):
     insurance = models.IntegerField()
     cfs_chgs = models.IntegerField()
     agency = models.IntegerField()
+    others = models.IntegerField(default=0)
     
 
     def __str__(self):
         return str(self.total_cost)
 
     def total_cost(self):
-        total = customs + cif_cost + delivery_order + radiation + ntsa_sticker + insurance + cfs_chgs + agency
+        total = customs + cif_cost + delivery_order + radiation + ntsa_sticker + insurance + cfs_chgs + agency + others
         return total
 
 class Sales(models.Model):

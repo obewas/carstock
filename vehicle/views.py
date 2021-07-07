@@ -56,8 +56,9 @@ def total_cost(request):
             insurance = form.cleaned_data["insurance"]
             cfs_chgs = form.cleaned_data["cfs_chgs"]
             agency = form.cleaned_data["agency"]
+            others = form.cleaned_data['others']
     
-            total = customs + cif_cost + delivery_order + radiation + ntsa_sticker + insurance + cfs_chgs + agency
+            total = customs + cif_cost + delivery_order + radiation + ntsa_sticker + insurance + cfs_chgs + agency + others
             form.save()
             return render(request, "total_cost.html", {"form": form, "total": total})
     else:
