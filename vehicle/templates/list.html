@@ -14,6 +14,7 @@
                     <th>Engine Number</th>
                     <th>Chassis Number</th>
                     <th>Registration Number</th>
+                    <th>Total Cost</th>
                     <th>Actions</th>
 
 
@@ -30,6 +31,7 @@
                     <td>{{ car.engine_no}}</td>
                     <td>{{car.chassis_number}}</td>
                     <td>{{car.reg_number}}</td>
+                    <td><a href="{% url 'total' %}"></a>{{car.total}}</td>
                     <td>
                         <a href="{% url 'update' pk=car.id %}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
